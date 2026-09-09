@@ -1,0 +1,8 @@
+# Integration Checklist
+
+[ ] Database tables created (Member 2)
+[ ] Backend APIs - Events/Venue/Registration (Member 3)
+[ ] Backend APIs - Participant/Attendance/Reports (Member 4)
+[ ] Frontend - Participant pages (Member 5)
+[ ] Frontend - Admin pages (Member 6)
+[ ] Users/privileges/transactions/backup (Member 8)
