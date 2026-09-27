@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "59717d41-ed19-4241-a578-56b68a9413be",
+    "name": "EventSphere APIs - Backend 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58126965",
+    "_collection_link": "https://go.postman.co/collection/58126965-59717d41-ed19-4241-a578-56b68a9413be?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Event",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"EventName\": \"Web Development Workshop\",\r\n  \"EventDate\": \"2026-10-10\",\r\n  \"EventTime\": \"10:00:00\",\r\n  \"Description\": \"Web development workshop\",\r\n  \"OrganizerID\": 1,\r\n  \"VenueID\": 1,\r\n  \"TotalSeats\": 100,\r\n  \"Fee\": 150\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Venues",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/venues",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "venues"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Participant",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"eventId\": 1,\r\n  \"participantId\": 2,\r\n  \"fee\": 150\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
