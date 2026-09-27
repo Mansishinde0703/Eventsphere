@@ -45,9 +45,26 @@ app.get('/api/venues', (req, res) => {
 
 app.post('/api/register', (req, res) => {
   const { eventId, participantId, fee } = req.body;
-  db.query('CALL RegisterParticipant(?, ?, ?)', [eventId, participantId, fee], (err, result) => {
+
+  const sql = `INSERT INTO Registration
+               (EventID, ParticipantID, RegistrationDate, FeePaid, AttendanceStatus)
+               VALUES (?, ?, CURDATE(), ?, 'absent')`;
+
+  db.query(sql, [eventId, participantId, fee], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
-    res.json({ message: 'Registration successful', result });
+
+    db.query(
+      'UPDATE Event SET AvailableSeats = AvailableSeats - 1 WHERE EventID = ?',
+      [eventId],
+      (err2) => {
+        if (err2) return res.status(500).json({ error: err2.message });
+
+        res.json({
+          message: 'Registration successful',
+          registrationId: result.insertId
+        });
+      }
+    );
   });
 });
 
