@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">EventSphere</div>
+
+        <a href="organizer-dashboard.html" class="home-link">
+            Dashboard
+        </a>
+    </header>
+
+    <main class="create-event-page">
+
+        <section class="create-event-card">
+
+            <div class="create-event-intro">
+                <p class="welcome-text">EVENTSPHERE</p>
+
+                <h1>Create Event</h1>
+
+                <p>
+                    Add the details of your event and publish it for participants.
+                </p>
+            </div>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="eventName">Event Name</label>
+                    <input type="text" id="eventName" name="EventName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+                    <input type="date" id="eventDate" name="EventDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTime">Event Time</label>
+                    <input type="time" id="eventTime" name="EventTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="Description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="totalSeats">Total Seats</label>
+                    <input type="number" id="totalSeats" name="TotalSeats" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fee">Fee</label>
+                    <input type="number" id="fee" name="Fee" required>
+                </div>
+
+                <h2>Venue Details</h2>
+
+                <div class="form-group">
+                    <label for="venueName">Venue Name</label>
+                    <input type="text" id="venueName" name="VenueName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="Address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="City" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="capacity">Capacity</label>
+                    <input type="number" id="capacity" name="Capacity" required>
+                </div>
+
+                <button type="submit" class="publish-button">
+                    Publish Event
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

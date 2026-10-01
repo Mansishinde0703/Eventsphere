@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Login - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">EventSphere</div>
+
+        <a href="index.html" class="home-link">
+            Home
+        </a>
+    </header>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <p class="welcome-text">EVENTSPHERE</p>
+
+            <h1>Organizer Login</h1>
+
+            <p>
+                Login to create and manage your events.
+            </p>
+
+            <form onsubmit="loginOrganizer(event)">
+
+                <div class="form-group">
+                    <label for="organizerEmail">Email</label>
+                    <input
+                        type="email"
+                        id="organizerEmail"
+                        name="Email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="organizerPassword">Password</label>
+                    <input
+                        type="password"
+                        id="organizerPassword"
+                        name="Password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-button">
+                    Login
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

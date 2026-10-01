@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5eedd;
+    color: #16587b;
+}
+
+header {
+    height: 75px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 3px solid #16587b;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #16587b;
+}
+
+.home-link,
+header a {
+    text-decoration: none;
+    color: #16587b;
+    font-weight: bold;
+}
+
+.home-link:hover,
+header a:hover {
+    color: #84b3ce;
+}
+
+.home-page {
+    min-height: calc(100vh - 75px);
+    padding: 60px 7%;
+    background: #84b3ce;
+}
+
+.welcome-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.welcome-text {
+    color: #16587b;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #16587b;
+}
+
+.tagline {
+    font-size: 19px;
+    margin-bottom: 45px;
+    color: #16587b;
+}
+
+.role-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.role-card {
+    width: 300px;
+    padding: 35px 30px;
+    background: #f5eedd;
+    color: #16587b;
+    text-decoration: none;
+    border: 3px solid #16587b;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.role-card:hover {
+    background: #16587b;
+    color: #ffffff;
+    transform: translateY(-7px);
+}
+
+.role-card h2 {
+    margin-bottom: 15px;
+}
+
+.role-card p {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.role-card span {
+    font-weight: bold;
+}
+
+.about-section {
+    max-width: 1000px;
+    margin: 70px auto 0;
+    padding: 40px;
+    background: #f5eedd;
+    border: 3px solid #16587b;
+    border-radius: 22px;
+    text-align: left;
+}
+
+.about-section h2 {
+    color: #16587b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.participant-page,
+.event-details-page,
+.registration-page,
+.login-page,
+.dashboard-page,
+.create-event-page {
+    min-height: calc(100vh - 75px);
+    padding: 60px 7%;
+}
+
+.participant-page,
+.dashboard-page {
+    background: #84b3ce;
+}
+
+.event-details-page,
+.registration-page,
+.login-page,
+.create-event-page {
+    background: #f5eedd;
+}
+
+.participant-heading,
+.dashboard-heading {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.participant-heading p,
+.dashboard-heading p {
+    margin-top: 10px;
+}
+
+.events-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.event-card {
+    background: #ffffff;
+    border: 3px solid #16587b;
+    border-radius: 22px;
+    padding: 35px;
+}
+
+.event-card h2 {
+    margin-bottom: 20px;
+    color: #16587b;
+}
+
+.event-card p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.event-description {
+    margin-top: 20px;
+}
+
+.event-details-card,
+.registration-card,
+.login-card,
+.create-event-card {
+    background: #ffffff;
+    border: 3px solid #16587b;
+    border-radius: 22px;
+    padding: 35px;
+}
+
+.event-button,
+.register-button,
+.login-button,
+.publish-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #16587b;
+    color: #ffffff;
+    border: 2px solid #16587b;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.event-button:hover,
+.register-button:hover,
+.login-button:hover,
+.publish-button:hover {
+    background: #84b3ce;
+    color: #16587b;
+    border-color: #16587b;
+}
+
+.event-details-card {
+    max-width: 800px;
+    margin: auto;
+}
+
+.event-information {
+    margin-top: 25px;
+}
+
+.event-information p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.event-information h2,
+.create-event-card h2 {
+    margin: 30px 0 20px;
+}
+
+.registration-card,
+.login-card,
+.create-event-card {
+    max-width: 650px;
+    margin: auto;
+}
+
+.registration-intro,
+.create-event-intro {
+    margin-bottom: 30px;
+}
+
+.registration-intro p:last-child,
+.create-event-intro p:last-child {
+    margin-top: 10px;
+}
+
+.registration-about {
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: #84b3ce;
+    border: 3px solid #16587b;
+    border-radius: 20px;
+}
+
+.registration-about h2 {
+    color: #16587b;
+    margin-bottom: 12px;
+}
+
+.registration-about p {
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #16587b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #16587b;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background: #f5eedd;
+    color: #16587b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 3px solid #84b3ce;
+}
+
+.dashboard-actions {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    width: 300px;
+    padding: 30px;
+    background: #ffffff;
+    color: #16587b;
+    text-decoration: none;
+    border: 3px solid #16587b;
+    border-radius: 20px;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 15px;
+    color: #16587b;
+}
+
+.dashboard-card p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.dashboard-card span {
+    font-weight: bold;
+    color: #84b3ce;
+}
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .participant-page,
+    .event-details-page,
+    .registration-page,
+    .login-page,
+    .dashboard-page,
+    .create-event-page {
+        padding: 40px 5%;
+    }
+
+    .role-card,
+    .dashboard-card {
+        width: 100%;
+    }
+
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+
+    .event-details-card,
+    .registration-card,
+    .login-card,
+    .create-event-card {
+        padding: 25px;
+    }
+
+    .about-section {
+        padding: 25px;
+    }
+}

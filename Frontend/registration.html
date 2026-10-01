@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">EventSphere</div>
+
+        <a href="event-details.html" class="home-link">
+            Back to Event
+        </a>
+    </header>
+
+    <main class="registration-page">
+
+        <section class="registration-card">
+
+            <div class="registration-intro">
+
+                <p class="welcome-text">EVENT REGISTRATION</p>
+
+                <h1>Register for the Event</h1>
+
+                <p>
+                    Fill in your details to complete your registration.
+                </p>
+
+            </div>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="Phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="participantType">Participant Type</label>
+
+                    <select id="participantType" name="ParticipantType" required>
+                        <option value="">Select Participant Type</option>
+                        <option value="Student">Student</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="register-button">
+                    Complete Registration
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="registration-about">
+
+            <h2>About EventSphere</h2>
+
+            <p>
+                EventSphere brings participants and organizers together on one
+                platform, making event discovery and registration simple and
+                convenient.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
