@@ -1,3 +1,4 @@
+// Add near the top of server3.js
 
 const express=require("express");
 const mysql=require("mysql2");
@@ -9,8 +10,8 @@ app.use(express.json());
 
 const db=mysql.createConnection({
 host:'localhost',
-user:'event_sphere',
-password:'Shruti@11',
+user:'root',
+password:'root123',
 database:'event_sphere'
 });
 

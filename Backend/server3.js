@@ -9,8 +9,8 @@ app.use(express.json());
 
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'event_sphere',
-  password: 'Shruti@11',
+  user: 'root',
+  password: 'root123',
   database: 'event_sphere'
 });
 
@@ -23,6 +23,12 @@ app.get('/api/events', (req, res) => {
   db.query('SELECT * FROM Event', (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(results);
+  });
+});
+app.get('/api/events/:id', (req, res) => {
+  db.query('SELECT * FROM Event WHERE EventID = ?', [req.params.id], (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(results[0]);
   });
 });
 
@@ -40,6 +46,14 @@ app.get('/api/venues', (req, res) => {
   db.query('SELECT * FROM Venue', (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json(results);
+  });
+});
+app.post('/api/venues', (req, res) => {
+  const { VenueName, Address, City, Capacity } = req.body;
+  const sql = `INSERT INTO venue (VenueName, Address, City, Capacity) VALUES (?, ?, ?, ?)`;
+  db.query(sql, [VenueName, Address, City, Capacity], (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ message: 'Venue created', venueId: result.insertId });
   });
 });
 

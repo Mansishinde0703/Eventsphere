@@ -1,3 +1,4 @@
+USE event_sphere;
 -- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
 --
 -- Host: localhost    Database: event_sphere
@@ -18,10 +19,13 @@
 --
 -- Table structure for table `event`
 --
+USE event_sphere;
 
 DROP TABLE IF EXISTS `event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
+USE event_sphere;
+
 CREATE TABLE `event` (
   `EventID` int NOT NULL AUTO_INCREMENT,
   `EventName` varchar(100) NOT NULL,
@@ -53,11 +57,14 @@ UNLOCK TABLES;
 
 --
 -- Table structure for table `organizer`
+USE event_sphere;
 --
 
 DROP TABLE IF EXISTS `organizer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
+USE event_sphere;
+
 CREATE TABLE `organizer` (
   `OrganizerID` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
@@ -71,6 +78,7 @@ CREATE TABLE `organizer` (
 --
 -- Dumping data for table `organizer`
 --
+USE event_sphere;
 
 LOCK TABLES `organizer` WRITE;
 /*!40000 ALTER TABLE `organizer` DISABLE KEYS */;
@@ -81,6 +89,7 @@ UNLOCK TABLES;
 --
 -- Table structure for table `participant`
 --
+USE event_sphere;
 
 DROP TABLE IF EXISTS `participant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -98,6 +107,7 @@ CREATE TABLE `participant` (
 --
 -- Dumping data for table `participant`
 --
+USE event_sphere;
 
 LOCK TABLES `participant` WRITE;
 /*!40000 ALTER TABLE `participant` DISABLE KEYS */;
@@ -108,10 +118,13 @@ UNLOCK TABLES;
 --
 -- Table structure for table `registration`
 --
+USE event_sphere;
 
 DROP TABLE IF EXISTS `registration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
+USE event_sphere;
+
 CREATE TABLE `registration` (
   `RegistrationID` int NOT NULL AUTO_INCREMENT,
   `EventID` int DEFAULT NULL,
@@ -130,6 +143,7 @@ CREATE TABLE `registration` (
 --
 -- Dumping data for table `registration`
 --
+USE event_sphere;
 
 LOCK TABLES `registration` WRITE;
 /*!40000 ALTER TABLE `registration` DISABLE KEYS */;
@@ -144,6 +158,8 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `venue`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
+USE event_sphere;
+
 CREATE TABLE `venue` (
   `VenueID` int NOT NULL AUTO_INCREMENT,
   `VenueName` varchar(100) NOT NULL,
@@ -157,11 +173,16 @@ CREATE TABLE `venue` (
 --
 -- Dumping data for table `venue`
 --
+USE event_sphere;
 
 LOCK TABLES `venue` WRITE;
 /*!40000 ALTER TABLE `venue` DISABLE KEYS */;
+USE event_sphere;
+
 INSERT INTO `venue` VALUES (1,'Main Hall','123 MG Road','Pune',200),(2,'Open Ground','45 Park St','Mumbai',500);
 /*!40000 ALTER TABLE `venue` ENABLE KEYS */;
+USE event_sphere;
+
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -174,6 +195,7 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 DELIMITER //
+USE event_sphere;
 
 CREATE FUNCTION CalculateFee(p_type VARCHAR(20),p_base DECIMAL(10,2))
 RETURNS DECIMAL(10,2)
@@ -188,3 +210,16 @@ END //
 
 DELIMITER ;
 -- Dump completed on 2026-09-17 19:53:04
+SELECT * FROM event;
+SHOW PROCEDURE STATUS WHERE Db = 'event_sphere';
+SHOW FUNCTION STATUS WHERE Db = 'event_sphere';
+SHOW TRIGGERS;
+DELIMITER //
+CREATE TRIGGER AfterRegistrationInsert
+AFTER INSERT ON registration
+FOR EACH ROW
+BEGIN
+  UPDATE event SET AvailableSeats = AvailableSeats - 1 WHERE EventID = NEW.EventID;
+END //
+DELIMITER ;
+SELECT * FROM REGISTRATION;

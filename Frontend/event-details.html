@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Details - EventSphere</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,29 +22,41 @@
 
             <p class="welcome-text">EVENT DETAILS</p>
 
-            <h1>Tech Innovation Summit</h1>
+            <h1 id="eventName">Loading...</h1>
 
             <div class="event-information">
 
                 <p>
                     <strong>Description:</strong>
-                    Explore new ideas and innovations in technology through an engaging event.
+                    <span id="eventDescription">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    <span id="eventDate">Loading...</span>
+                </p>
+
+                <p>
+                    <strong>Fee:</strong>
+                    ₹<span id="eventFee">Loading...</span>
                 </p>
 
                 <p>
                     <strong>Available Seats:</strong>
-                    120
+                    <span id="eventSeats">Loading...</span>
                 </p>
 
             </div>
 
-            <a href="registration.html" class="event-button">
+            <a href="registration.html" id="registerLink" class="event-button">
                 Register for Event
             </a>
 
         </section>
 
     </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
